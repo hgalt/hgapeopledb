@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-09-23CEST20:22:35" product-name="hgapeopledb">
+		<header/>
+		<body>
+			<trans-unit id="tx_hgapeopledb_domain_model_people">
+				<source>People</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.last_name">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.first_name">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.gender">
+				<source>Gender</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.maiden_name">
+				<source>Maiden Name</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.dead">
+				<source>Dead</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.people_group">
+				<source>People Group</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.birth_date">
+				<source>Birth Date</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.nick_name">
+				<source>Nick Name</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.phone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.mobile_phone">
+				<source>Mobile Phone</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.street">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.zip">
+				<source>Zip</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.town">
+				<source>Town</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.country">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_people.info">
+				<source>Info</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_peoplegroup">
+				<source>People Group</source>
+			</trans-unit>
+			<trans-unit id="tx_hgapeopledb_domain_model_peoplegroup.name">
+				<source>Name</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

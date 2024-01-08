@@ -1,0 +1,59 @@
+{namespace hga=HGA\Hgapeopledb\ViewHelpers}
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<f:flashMessages />
+
+	<table class="tx_hgapeopledb">
+		<tr>
+			<f:for each="{peoples}" as="people" iteration="num">
+				<td style="width: 200px; word-break:break-all">
+						<f:link.action action="show" arguments="{people : people}">
+							<b>{people.firstName} {people.lastName}</b>
+						</f:link.action>
+						<f:if condition="{people.dead}">
+							<f:image class="people" src="typo3conf/ext/hgapeopledb/Resources/Public/Icons/dead.gif" alt="dead" />
+						</f:if>
+						<f:if condition="{people.maidenName}">
+							<br/>[{people.maidenName}]
+						</f:if>
+						<f:if condition="{people.email}">
+							<br/>
+							<f:link.email email="{people.email}" />
+						</f:if>
+						<f:if condition="{people.phone}">
+							<br/>{people.phone}
+						</f:if>
+						<f:if condition="{people.mobilePhone}">
+							<br/>{people.mobilePhone}
+						</f:if>
+				</td>
+				<td style="width: 50px">
+						<f:link.action action="show" arguments="{people : people}">
+							<f:if condition="{people.image.originalResource.publicUrl}">
+								<f:image src="{people.image.originalResource.publicUrl}" width="75" />
+							</f:if>
+						</f:link.action>
+				</td>
+				<f:if condition="({hga:counter(counter: '{num}', value: '{cycles}')} == 0)">
+					</tr>
+					<tr>
+				</f:if>
+			</f:for>
+		</tr>
+	</table>
+
+</f:section>

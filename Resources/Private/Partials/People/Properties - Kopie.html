@@ -1,0 +1,52 @@
+
+<table class="tx-hgapeopledb" >
+	<tr>
+		<td width ="300">
+		<p><b>
+		<f:if condition="{people.title}">
+			{people.title}
+		</f:if>
+		{people.firstName} 
+		<f:if condition="{people.nickName}">
+			({people.nickName})
+		</f:if>
+		{people.lastName}
+		<f:if condition="{people.maidenName}">
+			[{people.maidenName}]
+		</f:if>
+		<f:if condition="{people.dead}">
+			<img class="people" src="typo3conf/ext/hgapeopledb/Resources/Public/Icons/dead.gif" alt="dead" />
+		</f:if>
+		</b></p>
+		<f:if condition="{people.birthDate}">
+			<br />{people.birthDate -> f:format.date()}
+		</f:if>
+		<f:if condition="{people.email}">
+			<br /><f:link.email email="{people.email}" />
+		</f:if>
+		<f:if condition="{people.phone}">
+			<br />{people.phone}
+		</f:if>
+		<f:if condition="{people.mobilePhone}">
+			<br />{people.mobilePhone}
+		</f:if>
+		<f:if condition="{people.street}">
+			<br />{people.street}
+		</f:if>
+		<f:if condition="{people.zip}">
+			<br />{people.zip} {people.town}
+		</f:if>
+		<f:if condition="{people.country}">
+			<br />{people.country} 
+		</f:if>
+		</td>
+		<td>
+				<f:image src="{people.image.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<f:format.raw value="{people.info}" />
+		</td>
+	</tr>
+</table>

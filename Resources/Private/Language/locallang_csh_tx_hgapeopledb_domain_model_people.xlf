@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="1970-01-01T01:00:00Z" product-name="hgapeopledb">
+		<header/>
+		<body>
+			<trans-unit id="last_name.description">
+				<source>lastName</source>
+			</trans-unit>
+			<trans-unit id="first_name.description">
+				<source>firstName</source>
+			</trans-unit>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="gender.description">
+				<source>gender</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>image</source>
+			</trans-unit>
+			<trans-unit id="maiden_name.description">
+				<source>maidenName</source>
+			</trans-unit>
+			<trans-unit id="dead.description">
+				<source>dead</source>
+			</trans-unit>
+			<trans-unit id="people_group.description">
+				<source>peopleGroup</source>
+			</trans-unit>
+			<trans-unit id="birth_date.description">
+				<source>birthDate</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="nick_name.description">
+				<source>nickName</source>
+			</trans-unit>
+			<trans-unit id="phone.description">
+				<source>phone</source>
+			</trans-unit>
+			<trans-unit id="mobile_phone.description">
+				<source>mobilePhone</source>
+			</trans-unit>
+			<trans-unit id="street.description">
+				<source>street</source>
+			</trans-unit>
+			<trans-unit id="zip.description">
+				<source>zip</source>
+			</trans-unit>
+			<trans-unit id="town.description">
+				<source>town</source>
+			</trans-unit>
+			<trans-unit id="country.description">
+				<source>country</source>
+			</trans-unit>
+			<trans-unit id="info.description">
+				<source>info</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

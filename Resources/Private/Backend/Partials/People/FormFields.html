@@ -1,0 +1,73 @@
+
+<label for="lastName">
+	<f:translate key="tx_hgapeopledb_domain_model_people.last_name" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="lastName" /><br />
+<label for="firstName">
+	<f:translate key="tx_hgapeopledb_domain_model_people.first_name" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="firstName" /><br />
+<label for="title">
+	<f:translate key="tx_hgapeopledb_domain_model_people.title" />
+</label><br />
+	<f:form.textfield property="title" /><br />
+<label for="gender">
+	<f:translate key="tx_hgapeopledb_domain_model_people.gender" />
+</label><br />
+	<f:form.textfield property="gender" /><br />
+<label for="image">
+	<f:translate key="tx_hgapeopledb_domain_model_people.image" />
+</label><br />
+	<span>File upload is not implemented!</span><br  /><br />
+<label for="maidenName">
+	<f:translate key="tx_hgapeopledb_domain_model_people.maiden_name" />
+</label><br />
+	<f:form.textfield property="maidenName" /><br />
+<label for="dead">
+	<f:translate key="tx_hgapeopledb_domain_model_people.dead" />
+</label><br />
+	<f:form.checkbox property="dead" value="1" /><br />
+<label for="peopleGroup">
+	<f:translate key="tx_hgapeopledb_domain_model_people.people_group" />
+</label><br />
+	<f:form.textfield property="peopleGroup" /><br />
+<label for="birthDate">
+	<f:translate key="tx_hgapeopledb_domain_model_people.birth_date" />
+</label><br />
+	<f:form.textfield property="birthDate"  value="{people.birthDate->f:format.date()}" /><br />
+<label for="email">
+	<f:translate key="tx_hgapeopledb_domain_model_people.email" />
+</label><br />
+	<f:form.textfield property="email" /><br />
+<label for="nickName">
+	<f:translate key="tx_hgapeopledb_domain_model_people.nick_name" />
+</label><br />
+	<f:form.textfield property="nickName" /><br />
+<label for="phone">
+	<f:translate key="tx_hgapeopledb_domain_model_people.phone" />
+</label><br />
+	<f:form.textfield property="phone" /><br />
+<label for="mobilePhone">
+	<f:translate key="tx_hgapeopledb_domain_model_people.mobile_phone" />
+</label><br />
+	<f:form.textfield property="mobilePhone" /><br />
+<label for="street">
+	<f:translate key="tx_hgapeopledb_domain_model_people.street" />
+</label><br />
+	<f:form.textfield property="street" /><br />
+<label for="zip">
+	<f:translate key="tx_hgapeopledb_domain_model_people.zip" />
+</label><br />
+	<f:form.textfield property="zip" /><br />
+<label for="town">
+	<f:translate key="tx_hgapeopledb_domain_model_people.town" />
+</label><br />
+	<f:form.textfield property="town" /><br />
+<label for="country">
+	<f:translate key="tx_hgapeopledb_domain_model_people.country" />
+</label><br />
+	<f:form.textfield property="country" /><br />
+<label for="info">
+	<f:translate key="tx_hgapeopledb_domain_model_people.info" />
+</label><br />
+	<f:form.textarea property="info" cols="40" rows="15" /><br />

@@ -1,0 +1,82 @@
+
+<f:layout name="BEdefault" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for People(BE)</h1>
+
+<html
+    xmlns:backend="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<f:flashMessages />
+
+<table  class="tx_hgapeopledb" >
+	<tr>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.last_name" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.first_name" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.title" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.gender" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.image" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.maiden_name" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.dead" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.people_group" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.birth_date" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.email" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.nick_name" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.phone" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.mobile_phone" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.street" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.zip" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.town" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.country" /></th>
+		<th><f:translate key="tx_hgapeopledb_domain_model_people.info" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{peoples}" as="people">
+		<tr>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.last_name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.first_name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.gender}</f:link.action></td>
+			<td><f:if condition="{people.image.originalResource.publicUrl}">
+					<f:link.action action="show" arguments="{people: people}">
+						<f:image src="{people.image.originalResource.publicUrl}" alt="Bild" width="80"/>
+					</f:link.action>
+				</f:if></td>
+<!--			<td><f:link.action action="show" arguments="{people : people}"> {people.image.originalResource.name}</f:link.action></td> -->
+			<td><f:link.action action="show" arguments="{people : people}"> {people.maiden_name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.dead}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.people_group}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.birth_date -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.email}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.nick_name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.phone}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.mobile_phone}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.street}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.zip}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.town}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.country}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{people : people}"> {people.info}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{people : people}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{people : people}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+<f:link.action action="new">New People</f:link.action>
+</f:section>
