@@ -1,0 +1,95 @@
+<?php
+
+	
+if (!isset($GLOBALS['TCA']['fe_users']['ctrl']['type'])) {
+	if (file_exists($GLOBALS['TCA']['fe_users']['ctrl']['dynamicConfigFile'])) {
+		require_once($GLOBALS['TCA']['fe_users']['ctrl']['dynamicConfigFile']);
+	}
+	// no type field defined, so we define it here. This will only happen the first time the extension is installed!!
+	$GLOBALS['TCA']['fe_users']['ctrl']['type'] = 'tx_extbase_type';
+	$tempColumnstx_hgapeopledb_fe_users = array();
+	$tempColumnstx_hgapeopledb_fe_users[$GLOBALS['TCA']['fe_users']['ctrl']['type']] = array(
+		'exclude' => 1,
+		'label'   => 'LLL:EXT:hgapeopledb/Resources/Private/Language/locallang_db.xlf:tx_hgapeopledb.tx_extbase_type',
+		'config' => array(
+			'type' => 'select',
+			'items' => array(
+				array('CustomFrontendUser','Tx_Hgapeopledb_CustomFrontendUser')
+			),
+			'default' => 'Tx_Hgapeopledb_CustomFrontendUser',
+			'size' => 1,
+			'maxitems' => 1,
+		)
+	);
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('fe_users', $tempColumnstx_hgapeopledb_fe_users, 1);
+}
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+	'fe_users',
+	$GLOBALS['TCA']['fe_users']['ctrl']['type'],
+	'',
+	'after:' . $GLOBALS['TCA']['fe_users']['ctrl']['label']
+);
+
+
+
+
+
+$tmp_hgapeopledb_columns = array(
+
+	'test' => array(
+		'exclude' => 1,
+		'label' => 'LLL:EXT:hgapeopledb/Resources/Private/Language/locallang_db.xlf:tx_hgapeopledb_domain_model_customfrontenduser.test',
+		'config' => array(
+			'type' => 'input',
+			'size' => 30,
+			'eval' => 'trim'
+		),
+	),
+	'address' => array(
+		'exclude' => 1,
+		'label' => 'LLL:EXT:hgapeopledb/Resources/Private/Language/locallang_db.xlf:tx_hgapeopledb_domain_model_customfrontenduser.address',
+		'config' => array(
+			'type' => 'inline',
+			'foreign_table' => 'tt_content',
+			'minitems' => 0,
+			'maxitems' => 1,
+			'appearance' => array(
+				'collapseAll' => 0,
+				'levelLinksPosition' => 'top',
+				'showSynchronizationLink' => 1,
+				'showPossibleLocalizationRecords' => 1,
+				'showAllLocalizationLink' => 1
+			),
+		),
+	),
+);
+
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('fe_users',$tmp_hgapeopledb_columns);
+
+
+/* inherit and extend the show items from the parent class */
+
+if(isset($GLOBALS['TCA']['fe_users']['types']['0']['showitem'])) {
+	$GLOBALS['TCA']['fe_users']['types']['Tx_Hgapeopledb_CustomFrontendUser']['showitem'] = $GLOBALS['TCA']['fe_users']['types']['0']['showitem'];
+} elseif(is_array($GLOBALS['TCA']['fe_users']['types'])) {
+	// use first entry in types array
+	$fe_users_type_definition = reset($GLOBALS['TCA']['fe_users']['types']);
+	$GLOBALS['TCA']['fe_users']['types']['Tx_Hgapeopledb_CustomFrontendUser']['showitem'] = $fe_users_type_definition['showitem'];
+} else {
+	$GLOBALS['TCA']['fe_users']['types']['Tx_Hgapeopledb_CustomFrontendUser']['showitem'] = '';
+}
+$GLOBALS['TCA']['fe_users']['types']['Tx_Hgapeopledb_CustomFrontendUser']['showitem'] .= ',--div--;LLL:EXT:hgapeopledb/Resources/Private/Language/locallang_db.xlf:tx_hgapeopledb_domain_model_customfrontenduser,';
+$GLOBALS['TCA']['fe_users']['types']['Tx_Hgapeopledb_CustomFrontendUser']['showitem'] .= 'test, address';
+
+$GLOBALS['TCA']['fe_users']['columns'][$GLOBALS['TCA']['fe_users']['ctrl']['type']]['config']['items'][] = array('LLL:EXT:hgapeopledb/Resources/Private/Language/locallang_db.xlf:fe_users.tx_extbase_type.Tx_Hgapeopledb_CustomFrontendUser','Tx_Hgapeopledb_CustomFrontendUser');
+
+
+
+
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+	'',
+	'EXT:/Resources/Private/Language/locallang_csh_.xlf'
+);

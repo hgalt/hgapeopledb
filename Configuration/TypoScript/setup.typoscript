@@ -1,0 +1,56 @@
+
+plugin.tx_hgapeopledb {
+	view {
+		templateRootPaths = {
+			0 = EXT:hgapeopledb/Resources/Private/Templates/
+			}
+		partialRootPaths {
+			0 = EXT:hgapeopledb/Resources/Private/Partials/
+			}
+		layoutRootPaths {
+			= EXT:hgapeopledb/Resources/Private/Layouts/
+			}
+	}
+	persistence {
+		storagePid = {$plugin.tx_hgapeopledb_hgapeopledb.persistence.storagePid}
+	}
+}
+
+
+
+plugin.tx_hgapeopledb._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-hgapeopledb table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-hgapeopledb table th {
+		font-weight:bold;
+	}
+
+	.tx-hgapeopledb table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+	img { display : block; }
+	img.people{
+		display: inline;
+	}
+)

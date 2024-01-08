@@ -1,0 +1,36 @@
+# Configuration/Services.yaml
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  HGA\Hgapeopledb\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  HGA\Hgapeopledb\Controller\PeopleGroupController:
+    public: true
+
+  HGA\Hgapeopledb\Controller\PeopleController:
+    public: true
+    
+  HGA\Hgapeopledb\Backend\Controller\PeopleBackendController:
+    public: true
+        
+  HGA\Hgapeopledb\Backend\Controller\PeopleGroupBackendController:
+    public: true
+    
+  HGA\Hgapeopledb\Domain\Repository\MyPeopleRepository:
+    tags: ['backend.controller']
+    public: true
+    
+  connection.tx_hgapeopledb_domain_model_peoplegroup:
+    class: 'TYPO3\CMS\Core\Database\Connection'
+    factory: ['@TYPO3\CMS\Core\Database\ConnectionPool', 'getConnectionForTable']
+    arguments:
+      - 'tx_hgapeopledb_domain_model_peoplegroup'
+
+  HGA\Hgapeopledb\Domain\Repository\MyPeopleGroupRepository:
+    arguments:
+      - '@connection.tx_hgapeopledb_domain_model_peoplegroup'
