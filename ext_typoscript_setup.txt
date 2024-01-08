@@ -1,0 +1,17 @@
+
+
+
+config.tx_extbase{
+    persistence{
+        classes{
+
+            HGA\Hgapeopledb\Domain\Model\Content {
+                mapping {
+                    tableName = tt_content
+                    recordType = Tx_Hgapeopledb_Content
+                }
+            }
+            
+    	}
+    }
+}

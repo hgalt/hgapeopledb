@@ -1,0 +1,19 @@
+{
+   "name": "hga/hgapeopledb",
+   "type": "typo3-cms-extension",
+   "description": "People database",
+   "license": "GPL-2.0-or-later",
+   "require": {
+      "typo3/cms-core": "^11.5 || ^12.0"
+   },
+   "autoload": {
+      "psr-4": {
+         "HGA\\Hgapeopledb\\": "Classes/"
+      }
+   },
+   "extra": {
+      "typo3/cms": {
+         "extension-key": "hgapeopledb"
+      }
+   }
+}
